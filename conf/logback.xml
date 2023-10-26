@@ -1,0 +1,33 @@
+<configuration debug="false">
+
+    <!-- Define the pattern with ANSI color codes -->
+    <conversionRule conversionWord="coloredLevel" converterClass="play.api.libs.logback.ColoredLevel" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %coloredLevel %logger{36} - %msg%n</pattern>
+            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{15} - %msg%n</pattern>-->
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <!--
+        quitando INFO  play.api.http.EnabledFilters - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>
+        play.filters.csrf.CSRFFilter
+        play.filters.headers.SecurityHeadersFilter
+        play.filters.hosts.AllowedHostsFilter
+    -->
+    <logger name="play.api.http.EnabledFilters" level="OFF" />
+
+    <!-- WARN p.api.mvc.DefaultJWTCookieDataCodec - decode: cookie has invalid signature!
+         message = JWT signature does not match locally computed signature.
+         JWT validity cannot be asserted and should not be trusted.
+         INFO  p.api.mvc.DefaultJWTCookieDataCodec - The JWT signature in the cookie does
+         not match the locally computed signature with the server. This usually indicates
+         the browser has a leftover cookie from another Play application, so clearing
+         cookies may resolve this error message. -->
+    <logger name="p.api.mvc.DefaultJWTCookieDataCodec" level="OFF" />
+</configuration>

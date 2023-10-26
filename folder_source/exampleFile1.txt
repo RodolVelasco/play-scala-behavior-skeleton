@@ -1,0 +1,25 @@
+version: '3'
+services:
+  ftp-server-1:
+    image: garethflowers/ftp-server
+    environment:
+      - FTP_USER=userOne
+      - FTP_PASS=123
+    ports:
+      - '21:21/tcp'
+      - '40000:40000/tcp'
+#      - '40000-40000:40000-40000/tcp'
+    volumes:
+      - '/data:/home/userOne'
+
+#  ftp-2:
+#    image: garethflowers/ftp-server
+#    environment:
+#      - FTP_USER=userTwo
+#      - FTP_PASS=345
+#    ports:
+#      - '22:22/tcp'
+#      - '40010:40010/tcp'
+##      - '40010-40010:40010-40010/tcp'
+#    volumes:
+#      - '/data:/home/userTwo'
