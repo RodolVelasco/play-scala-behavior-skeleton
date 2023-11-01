@@ -2,7 +2,7 @@ package com.applaudo.services.modules
 
 import javax.inject._
 import akka.actor.{ActorSystem, Props}
-import com.applaudo.services.flows.FileMover
+import com.applaudo.services.orchestrator.flows.FileMover
 import play.api.{Configuration, Logger}
 
 @Singleton

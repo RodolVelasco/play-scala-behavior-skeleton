@@ -8,7 +8,8 @@ class StartupModule(environment: Environment, configuration: Configuration) exte
 
   override def configure(): Unit = {
     logger.info("Initializing ...")
-    bind(classOf[CounterStartup]).asEagerSingleton()
-    bind(classOf[FileMoverStartup]).asEagerSingleton()
+    //Comentando por pruebas de otra estructura de proyecto
+    //bind(classOf[CounterStartup]).asEagerSingleton()
+    //bind(classOf[FileMoverStartup]).asEagerSingleton()
   }
 }

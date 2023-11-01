@@ -1,4 +1,4 @@
-package com.applaudo.services.flows
+package com.applaudo.services.orchestrator.flows
 
 import java.nio.file._
 import akka.actor.{Actor, ActorLogging}
